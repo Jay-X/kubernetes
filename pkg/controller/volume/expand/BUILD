@@ -8,7 +8,6 @@ go_library(
     importpath = "k8s.io/kubernetes/pkg/controller/volume/expand",
     deps = [
         "//pkg/apis/core/v1/helper:go_default_library",
-        "//pkg/controller:go_default_library",
         "//pkg/controller/volume/events:go_default_library",
         "//pkg/util/mount:go_default_library",
         "//pkg/volume:go_default_library",
@@ -33,7 +32,6 @@ go_library(
         "//staging/src/k8s.io/client-go/tools/record:go_default_library",
         "//staging/src/k8s.io/client-go/util/workqueue:go_default_library",
         "//staging/src/k8s.io/cloud-provider:go_default_library",
-        "//staging/src/k8s.io/csi-translation-lib:go_default_library",
         "//vendor/k8s.io/klog:go_default_library",
     ],
 )
@@ -76,6 +74,7 @@ go_test(
         "//staging/src/k8s.io/client-go/informers:go_default_library",
         "//staging/src/k8s.io/client-go/testing:go_default_library",
         "//staging/src/k8s.io/component-base/featuregate/testing:go_default_library",
+        "//staging/src/k8s.io/csi-translation-lib:go_default_library",
         "//staging/src/k8s.io/csi-translation-lib/plugins:go_default_library",
     ],
 )

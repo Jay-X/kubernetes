@@ -3,6 +3,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 go_library(
     name = "go_default_library",
     srcs = [
+        "apply.go",
         "pod_port.go",
         "service_port.go",
         "umask.go",
@@ -14,6 +15,7 @@ go_library(
     visibility = ["//visibility:public"],
     deps = [
         "//staging/src/k8s.io/api/core/v1:go_default_library",
+        "//staging/src/k8s.io/apimachinery/pkg/api/meta:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/apis/meta/v1:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/runtime:go_default_library",
         "//staging/src/k8s.io/apimachinery/pkg/util/intstr:go_default_library",
@@ -82,8 +84,10 @@ filegroup(
         "//staging/src/k8s.io/kubectl/pkg/util/event:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/fieldpath:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/hash:all-srcs",
+        "//staging/src/k8s.io/kubectl/pkg/util/i18n:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/interrupt:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/logs:all-srcs",
+        "//staging/src/k8s.io/kubectl/pkg/util/openapi:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/podutils:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/printers:all-srcs",
         "//staging/src/k8s.io/kubectl/pkg/util/qos:all-srcs",
